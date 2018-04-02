@@ -50,7 +50,7 @@ void main(void)
     printf("\t|**WELCOME TO C PROGRAM SCHOOL BILLING SYSTEM PROJECT|**\n");
     printf("\n\t|                                                      |\n");
     printf("\t ______________________________________________________\n");
-    printf("\t|    DEVELOPED BY CODE WITH C TEAM                       |\n");
+    printf("\t|                                                        |\n");
     printf(" \t________________________________________________________\n");
     printf("\t|    *****************************************            |\n");
     printf("\t|    *****************************************            |\n");
@@ -449,7 +449,7 @@ void searchrec(int j)
             system("pause");
             fflush(stdin);
             fclose(ft);
-            printf("\n\nDo you want to continue with the process(press y or Y");
+            printf("\n\nDo you want to continue with the process(press y or Y)");
             fflush(stdin);
             c=getch();
         }
@@ -605,7 +605,7 @@ void modrec(int j)
                 modrec(1);
             }
 
-            printf("\n\nDo you want to continue with the process(press y or Y");
+            printf("\n\nDo you want to continue with the process(press y or Y)");
             fflush(stdin);
             c=getch();
         }
@@ -646,7 +646,7 @@ void modrec(int j)
             system("pause");
             fflush(stdin);
 
-            printf("\n\nDo you want to continue with the process(press y or Y");
+            printf("\n\nDo you want to continue with the process(press y or Y)");
             fflush(stdin);
             c=getch();
         }
@@ -704,7 +704,7 @@ void delrec(int j)
             fclose(temp);
             system("del student");
             system("ren tempfile, student");
-            printf("\n\nDo you want to continue with the process(press y or Y");
+            printf("\n\nDo you want to continue with the process(press y or Y)");
             fflush(stdin);
             c=getch();
         }
@@ -747,7 +747,7 @@ void delrec(int j)
             fclose(t1);
             system("del teacher");
             system("ren tempfile1, teacher");
-            printf("\n\nDo you want to continue with the process(press y or Y");
+            printf("\n\nDo you want to continue with the process(press y or Y)");
             fflush(stdin);
             c=getch();
         }
@@ -813,7 +813,7 @@ void salary(int mm)
                 system("ren te, teacher");
             }
         }
-        printf("\n\nDo you want to continue with the process(press y or Y");
+        printf("\n\nDo you want to continue with the process(press y or Y)");
         fflush(stdin);
         c=getch();
     }
@@ -887,7 +887,7 @@ void fee(int mm)
         fclose(t);
         system("del student");
         system("ren te, student");
-        printf("\n\nDo you want to continue with the process(press y or Y");
+        printf("\n\nDo you want to continue with the process(press y or Y)");
         fflush(stdin);
         c=getch();
     }
