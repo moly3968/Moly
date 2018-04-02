@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<conio.h>
 #include<windows.h>
-struct dat//for date(month and day
+struct dat 
 {
     int d,m;//d=day,m=month
 };
@@ -11,7 +11,7 @@ int clscanf();//check class (1-12)
 struct student
 {
     struct dat dt;
-    float f,fine,tot,adv,due;//f=fee
+    float f,fine,tot,adv,due;
     char n[50];
     int r,c;//roll and class
 } stud,s;
@@ -22,16 +22,16 @@ struct teacher
     float sal,adv,tot;
     int id,no;
 } tech,t;
-int chkdat(int,int);// for checking date
-void addrec(int);//for adding records
-void modrec(int);//for modifying records
-void searchrec(int);//for searching records
-void delrec(int);//for deleting records
-void salary(int);//for the calculation of salary of teacher and staff
-FILE *fs,*ft;//file declaration
+int chkdat(int,int);
+void addrec(int);
+void modrec(int);
+void searchrec(int);
+void delrec(int);
+void salary(int);
+FILE *fs,*ft;
 
-int mm,dd;//mm=month, dd=day
-void ext();//for exiting
+int mm,dd;
+void ext();
 void main(void)
 {
     int i,j,k;
@@ -59,7 +59,7 @@ void main(void)
     for(i=0; i<5; i++)
     {
         printf(".");
-        Sleep(500);//after printing one . another comes after 0.5 seconds
+        Sleep(500);
     }
     getch();
     system("cls");//clears the screen
@@ -83,7 +83,7 @@ void main(void)
     fflush(stdin);
     getch();
     system("cls");
-    system("color 0f");//1st is for back ground color and second is for text color
+    system("color 0f");
     printf("\n\t\tPLEASE ENTER CURRENT DATE\nmm dd\n ");
     scanf("%d%d",&mm,&dd);
     mm=chkdat(mm,dd);
@@ -244,11 +244,11 @@ void addrec(int j)
             else
             {
                 stud.tot=stud.fine+stud.due;
-            }//for calculation of total fee
-            fs=fopen("student","ab+");//opening a binary file in apend mode
+            }
+            fs=fopen("student","ab+");
             fwrite(&stud,sizeof(stud),1,fs);
             fclose(fs);
-            printf("\n\nDo you want to continue with the process(press y or Y");
+            printf("\n\nDo you want to continue with the process(press y or Y)");
             fflush(stdin);
             c=getch();
         }
@@ -279,7 +279,7 @@ void addrec(int j)
             ft=fopen("teacher","ab+");
             fwrite(&tech,sizeof(tech),1,ft);
             fclose(ft);
-            printf("\n\nDo you want to continue with the process(press y or Y");
+            printf("\n\nDo you want to continue with the process(press y or Y)");
             fflush(stdin);
             c=getch();
         }
@@ -416,7 +416,7 @@ void searchrec(int j)
                 system("pause");
                 searchrec(1);
             }
-            printf("\n\nDo you want to continue with the process(press y or Y");
+            printf("\n\nDo you want to continue with the process(press y or Y)");
             fflush(stdin);
             c=getch();
         }
@@ -678,7 +678,7 @@ void delrec(int j)
             fflush(stdin);
             scanf("%[^\n]",name);
             fs=fopen("student","rb");
-            temp=fopen("tempfile","wb");//opening of temporary file for deleting process
+            temp=fopen("tempfile","wb");
             while (fread(&stud,sizeof(stud),1,fs)==1)
             {
                 if (strcmp(stud.n,name)==0)
@@ -702,10 +702,8 @@ void delrec(int j)
 
             fclose(fs);
             fclose(temp);
-            system("del student");/*all data except the data to be
-            deleted in student were 1st moved to temp and data in student
-            was deleted*/
-            system("ren tempfile, student");//renaming temp to student
+            system("del student");
+            system("ren tempfile, student");
             printf("\n\nDo you want to continue with the process(press y or Y");
             fflush(stdin);
             c=getch();
@@ -784,7 +782,7 @@ void salary(int mm)
         t=fopen("te","wb+");
         while(fread(&tech,sizeof(tech),1,f)==1)//file opened
         {
-            if(strcmp(tech.n,name)==0 )//name entered is compared to the existing name in file
+            if(strcmp(tech.n,name)==0 )
             {
                 float lsal;
                 a=0;
